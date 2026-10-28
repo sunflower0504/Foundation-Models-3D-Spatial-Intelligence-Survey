@@ -1,0 +1,30 @@
+﻿Metric,Full Name,Task,Description,Direction
+IoU,Intersection over Union,3D Segmentation; Occupancy Estimation; 3D Localization,Intersection divided by union of predicted and reference regions; the evaluated region and matching rule follow the benchmark.,Higher
+mIoU,Mean Intersection over Union,3D Semantic Segmentation; Semantic Occupancy Estimation,Mean class-wise IoU over the benchmark-defined label set and evaluation mask.,Higher
+AP,Average Precision,3D Object Detection; 3D Instance Segmentation,Precision-recall summary using benchmark-specific matching; IoU thresholds and averaging rules differ across tasks.,Higher
+mAP,Mean Average Precision,3D Object Detection; 3D Instance Segmentation; Multi-object Grounding; Scene Graph Prediction,Mean AP over the specified classes or queries; matching may use box IoU or center distance and is not uniform across benchmarks.,Higher
+OA,Overall Accuracy,3D Semantic Segmentation,Fraction of evaluated points or voxels assigned the correct semantic label.,Higher
+NDS,nuScenes Detection Score,3D Object Detection,The nuScenes composite detection score combining mAP and normalized true-positive error terms under the official protocol.,Higher
+Acc@0.25,Grounding Accuracy at IoU 0.25,3D Visual Grounding,Fraction of referring queries correctly localized at the benchmark's 3D box IoU threshold of 0.25; candidate and ranking rules follow the official protocol.,Higher
+Acc@0.5,Grounding Accuracy at IoU 0.5,3D Visual Grounding,Fraction of referring queries correctly localized at the benchmark's 3D box IoU threshold of 0.5; candidate and ranking rules follow the official protocol.,Higher
+F1@0.5,F1 Score at IoU 0.5,Multi-object 3D Visual Grounding,Harmonic mean of precision and recall after matching predicted and reference objects at IoU 0.5; special cases follow the benchmark.,Higher
+BLEU,Bilingual Evaluation Understudy,3D Captioning; 3D Question Answering,Reference-based modified n-gram precision with brevity penalty; the survey includes BLEU-1 and higher-order variants must be identified separately when reporting results.,Higher
+METEOR,Metric for Evaluation of Translation with Explicit ORdering,3D Captioning; 3D Question Answering,Reference-based text score combining aligned word precision and recall with a fragmentation penalty; tokenization and matching follow the evaluator.,Higher
+ROUGE,Recall-Oriented Understudy for Gisting Evaluation,3D Captioning; 3D Question Answering,A family of reference-overlap scores; report the selected variant and official evaluation settings.,Higher
+CIDEr,Consensus-based Image Description Evaluation,3D Captioning; 3D Question Answering,TF-IDF-weighted n-gram consensus with reference text; scores may be reported at different scales including multiplication by 100.,Higher
+EM,Exact Match,3D Question Answering; Situated Question Answering,Answer matching after benchmark-defined normalization; EM@1 evaluates the top-ranked answer.,Higher
+Avg. Acc.,Average Accuracy,Situated 3D Question Answering,Average answer correctness under the dataset's question aggregation and matching rules; not automatically identical to every EM implementation.,Higher
+Recall,Recall,3D Scene Graph Prediction,Fraction of reference objects or relations recovered under the specified matching protocol.,Higher
+R@K,Recall at K,3D Scene Graph Prediction,Fraction of relevant reference items recovered among the top K predictions; item type and K follow the benchmark.,Higher
+RayIoU,Ray-based Intersection over Union,3D Occupancy Estimation,IoU of first occupied ray intersections using semantic agreement and a depth-error tolerance; the survey reports 1 m / 2 m / 4 m tolerances and their benchmark-defined aggregate.,Higher
+SR,Success Rate,Embodied Navigation; Robotic Manipulation,Fraction of episodes meeting the task-specific success criterion; also written as Success Rate in the survey.,Higher
+SPL,Success weighted by Path Length,Embodied Navigation,Episode success weighted by shortest-path efficiency and averaged across episodes under the official navigation protocol.,Higher
+NE,Navigation Error,Embodied Navigation,Distance from the final agent location to the goal under the benchmark's distance convention.,Lower
+OSR,Oracle Success Rate,Embodied Navigation,Fraction of episodes in which any visited position satisfies the goal-distance criterion even if the final position does not.,Higher
+Goal Progress,Goal Progress,Embodied Task Execution,Progress toward task goals or subgoals; the exact definition depends on the benchmark and is not a universal navigation formula.,Higher
+Completion Rate,Completion Rate,Multi-stage Robotic Tasks,Fraction of tasks or subgoals completed under the benchmark's completion definition.,Higher
+Avg. Reward,Average Reward,Reinforcement Learning; Robotic Manipulation,Mean reward or episode return using the task's reward design; averaging convention and reward scale must be specified.,Higher
+Feature Construction Time,Feature Construction Time,3D Scene Feature Construction,Elapsed time for constructing scene features in the surveyed comparison; excludes unreported pipeline stages and is not end-to-end latency.,Lower
+FPS,Frames Per Second,3D Feature Rendering,Number of rendered frames per second at a stated resolution and hardware configuration; not a full embodied-system control rate.,Higher
+HCR,Human Collision Rate,Socially-aware Navigation,Rate of human collisions in the social navigation evaluation; denominators and collision rules follow the official protocol.,Lower
+Distance Compliance Rate,Distance Compliance Rate,Socially-aware Navigation,Fraction of evaluated interactions satisfying the benchmark's interpersonal-distance rule; does not establish comprehensive system safety.,Higher
